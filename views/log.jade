@@ -1,0 +1,30 @@
+extends layout
+
+block content
+ include nav
+ .container
+  .banner
+    h1 #{user.team}'s Mood Log
+  each entry in entries.reverse()
+   .entry-card
+     .entry-card-bar
+      if (entry.date)
+       span.entry-date #{entry.user} &nbsp; #{moment(entry.date).format('DD/MM/YYYY HH:mm')}
+      if (entry.user===user.firstName)
+       .entry-change-buttons
+        a.btn.edit-button.entry-date(href= '/edit/' + entry.date) Edit
+        a.btn.edit-button.entry-date(href= '/delete/' + entry.date) Delete
+     .entry-data
+       if (entry.mood)
+        span.mood-text
+         .icon-log
+          img(src='img/moods/#{entry.mood}.svg', alt="#{entry.mood} face")
+          span #{entry.mood}
+       .entry-data-activity
+        if (entry.activity)
+         each item in entry.activity
+          span.activity-text
+           = item
+       if (entry.journal)
+        span.journal
+         = entry.journal 

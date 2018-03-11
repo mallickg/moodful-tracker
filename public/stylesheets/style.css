@@ -1,0 +1,900 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	color: #52646F;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	position: relative;
+	overflow-x: hidden;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	width: 100%;
+	background-color: #EEA868;
+	z-index: 99;
+}
+
+.navbar-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.navbar a {
+	color: #fff;
+}
+
+nav {
+	display: none;
+	text-align: center;
+	width: 100%;
+	z-index: 98;
+	background-color: #5AB4AE;
+	top: 60px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	padding: 5px 0;
+	position: absolute;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+nav a {
+	padding: 10px;
+	display: block;
+	cursor: pointer;
+	color: #fff;
+	transition: .5s all ease-in-out;
+}
+
+nav a:hover {
+	color: #52646F;
+}
+
+.banner {
+	padding: 85px 25px 20px;
+	text-align: center;
+}
+
+.banner span {
+	font-weight: bold;
+}
+
+.hero {
+	padding-top: 90px;
+	text-align: center;
+	height: 250px;
+	background: #fff url('/img/mood-bg.png') repeat center;
+}
+
+.brand, .brand-small {
+	font-family: 'Handlee', cursive;
+	color: #52646F;
+}
+
+.navbar .brand {
+	color: #fff;
+}
+
+.navbar .brand:hover {
+	color: #52646F;
+}
+
+.info-panel, #reg {
+	padding: 20px 7.5%;
+	text-align: center;
+	color: #fff;
+}
+
+.panel-img {
+	display: none;
+}
+
+#about {
+	background-color: #B79ED7; purple
+}
+
+#analyze {
+	background-color: #5DA0BF; blue
+}
+
+#track {
+	color: #52646F; /*grey*/
+}
+
+#reg {
+	background-color: #5AB4AE; /*green*/
+	padding-bottom: 150px;
+}
+
+.login-modal {
+	display: none;
+	text-align: center;
+	width: 80%;
+	position: absolute;
+	top: 30vh; 
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 99;
+	background-color: #5AB4AE;
+	color: #fff;
+	border-radius: 5px;
+	padding: 5px 20px 20px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.login-form {
+	display: block;
+}
+
+.login-form input {
+	border: 1px #ddd solid;
+	margin: 0 0 10px 0;
+	height: 25px;
+	border-radius: 5px;
+}
+
+.login-form label {
+	display: inline-block;
+	width: 80px;
+	text-align: left;
+}
+
+.btn {
+	background-color: grey;
+	color: #fff;
+	border: 0;
+	display: block;
+	height: 30px;
+	border-radius: 5px;
+	line-height: 0;
+	font-size:	1em;
+	transition: .5s all ease-in-out;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #B79ED7;
+}
+
+.login-form button {
+	display: inline-block;
+}
+
+.login-cancel-btn {
+	margin-left: 25px;
+}
+
+.register-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: 0 auto;
+}
+
+.register-container {
+	padding: 0 15px;
+}
+ 
+.register-form button {
+	margin: 20px auto 0;
+	width: 33.3%;
+}
+
+.register-form input {
+	border: 1px #ddd solid;
+	margin: 0 0 10px 0;
+	height: 30px;
+	border-radius: 5px;
+	width: 70%;
+}
+
+.register-form select {
+	border: 1px #ddd solid;
+	margin: 0 0 10px 0;
+	height: 30px;
+	border-radius: 5px;
+	width: 70%;
+}
+
+.register-form label {
+	display: inline-block;
+	width: 90px;
+	text-align: left;
+	font-size: .8em;
+}
+
+footer {
+	text-align: center;
+	background-color: #52646F;
+	color: #fff;
+	padding-bottom: 40px;
+	width: 100%;
+	margin: 0 auto;
+	height: 100px;
+	position: absolute;
+	bottom: 0;
+}
+
+footer p {
+	font-size: .7em;
+	margin-top: 20px;
+}
+
+footer a {
+	color: #fff;
+}
+
+footer a:hover {
+	color: #EEA868;
+}
+
+/*Log Entry Card Layout*/
+	.entry-card {
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		border-radius: 5px;
+		width: 90%;
+		margin: 0 auto 10px;
+	}
+
+	.entry-user {
+		font-size: .8em;
+		color: #fff;
+	}
+
+	.entry-card-bar {
+		display: flex;
+		background-color: #5DA0BF;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 10px 15px;
+		border-radius: 5px 5px 0 0;
+	}
+
+	.entry-date {
+		flex-basis: 50%;
+		font-size: .8em;
+		color: #fff;
+	}
+
+	.edit-button {
+		margin-right: 5px;
+		padding: 5px 10px;
+		background-color: #52646F;
+		cursor: pointer;
+		display: inline-block;
+		line-height: 1;
+		height: 25px;
+		transition: .5s all ease-in-out;
+	}
+
+	.edit-button:last-child {
+		margin-right: 0;
+	}
+
+	.entry-data {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 10px 5px;
+	}
+
+	.activity-text, .lastact {
+		display: inline-block;
+		background-color: #B79ED7;
+		color: white;
+		padding: 7.5px;
+		border-radius: 5px;
+		margin: 5px 5px 5px 0;
+		text-align: center;
+	}
+
+	.activity-text:last-child, .lastact:last-child {
+		margin-right: 0;
+	}
+
+	.activity-text:nth-child(2), .lastact:nth-child(2) {
+		background-color: #EEA868;
+	}
+
+	.activity-text:nth-child(3), .lastact:nth-child(3) {
+		background-color: #5AB4AE;
+	}
+
+	.journal {
+		font-size: 0.9em;
+		margin: 0;
+		padding: 10px;
+		line-height: 1.3;
+		text-align: center;
+	}
+
+	.lastjourn {
+		padding: 10px;
+	}
+
+/*Dashboard Containers*/
+	.dashboard-container {
+		display: block;
+		margin: 0 5px;
+	}
+
+	.dashboard-item-container {
+		text-align: center;
+		margin: 15px;
+		background-color: #fff;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		border-radius: 5px;
+	}
+
+	.dashboard-item-bar {
+		background-color: #5AB4AE;
+		width: 100%;
+		padding: 10px 15px;
+		text-align: center;
+		border-radius: 5px 5px 0 0;
+		color: #fff;
+	}
+
+	.date-bar {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.date-bar a {
+		color: #fff;
+	}
+
+	.piechart  {
+		min-height: 320px;
+		margin: 20px 0;
+		font-family: 'Handlee', cursive;
+	}
+
+	.bar text {
+		font-family: 'Handlee', cursive;
+	}
+
+	.switch {
+		display: block;
+		font-family: 'Handlee', cursive;
+		padding: 10px 0;
+		background-color: #5DA0BF;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 5px;
+		width: 100px;
+		margin: 0 auto 25px;
+		transition: .5s all ease-in-out;
+	}
+
+	.switch:hover {
+		background-color: #B79ED7;
+	}
+
+	#container input {
+		position: absolute;
+    	left: -9999px;
+	}
+
+	#container svg {
+		margin-left: -10px;
+		height: 320px;
+	}
+
+	/*Add new entry*/
+	.new-entry-container {
+		width: 100%;
+		padding-bottom: 30px;
+	}
+
+	.new-entry {
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	fieldset {
+		width: 100%;
+		margin-bottom: 15px;
+		text-align: center;
+		border-radius: 5px;
+		padding: 15px 0;
+		border: 1px solid #52646F;
+	}
+
+	legend {
+		margin: 0 auto;
+		font-size: 1.2em;
+	}
+
+	textarea {
+		width: 90%;
+		min-height: 200px;
+		border-radius: 5px;
+		border: 1px solid #52646F;
+		font-size: 1em;
+	}
+
+	fieldset p {
+		font-weight: bold;
+		font-size: 1.1em;
+		padding: 0 10px;
+		line-height: 1.2;
+		margin-top: 0;
+	}
+
+	.new-entry-container button {
+		margin: 0 auto;
+		background-color: #B79ED7;
+		padding: 20px;
+		width: 33.3%;
+	}
+
+/*Emotion Icons*/
+.input_hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.selected {
+	border: 3px #EE7468 solid !important;
+}
+
+.new-entry label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 2px 10px;
+    border-radius: 5px;
+    padding: 2px;
+    border: 3px solid #fff;
+}
+
+.icon {
+	width: 75px;
+}
+
+.icon-log {
+	width: 55px;
+	text-align: center;
+}
+
+.icon-log span {
+	margin: 5px 0;
+	display: block;
+}
+
+.new-entry img {
+	width: 64px;
+}
+
+.icon-log img, .lastmood img {
+	width: 50px;
+}
+
+.moodcloud {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	min-height: 200px;
+	padding: 60px 40px;
+}
+
+.cloud {
+	display: inline-block;
+	padding: 5px;
+	font-weight: bold;
+	color: #52646F;
+	margin: 0;
+}
+
+.cloud:nth-child(2n) {
+	color: #B79ED7;
+}
+
+.cloud:nth-child(3n) {
+	color: #EEA868;
+}
+
+.cloud:nth-child(4n) {
+	color: #5DA0BF;
+}
+
+.cloud:nth-child(4n) {
+	color: #5AB4AE;
+}
+
+.error-msg {
+	text-align: center;
+	font-size: 1em;
+	z-index: 100000;
+	background-color: #EE7468;
+	color: #fff;
+	position: fixed;
+	top: 10vh;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	height: auto;
+	padding: 10px;
+	max-width: 1100px;
+}
+
+@media only screen and (min-width: 375px) {
+
+	#container svg {
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 425px) {
+
+	.login-modal {
+		width: 70%;
+	}
+}
+
+
+@media only screen and (min-width: 768px) {
+
+	.nav-menu {
+		display: flex;
+		width: 100%;
+	}
+
+	#nav-toggle {
+		display: none;
+	}
+
+	.nav-links {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		z-index: 0;
+		background-color: #EEA868;
+		position: static;
+		height: auto;
+		margin: 0;
+		box-shadow: none;
+	}
+
+	.banner {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	
+	.register-form {
+		width: 50%;
+		margin:  0 auto;
+	}
+
+	.register-container {
+		padding: 0;
+	}
+
+	.register-form input {
+		height: 30px;
+		width: 70%;
+	}
+
+	.register-form label {
+		font-size: .9em;
+	}
+
+	.info-panel {
+		text-align: right;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.info-panel:nth-child(2n) {
+		text-align: left;
+	}
+
+	.login-modal {
+		width: 40%;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	/*Dashboard Containers*/
+	.dashboard-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 auto;
+	}
+
+	.dashboard-item-container {
+		width: 75%;
+		margin: 0 auto 40px;
+	}
+
+	.lastact-container {
+		margin-right: 30px;
+	}
+
+	.lastact, .activity-text {
+		display: block;
+		margin-right: 0;
+	}
+
+	.lastjourn {
+		text-align: left;
+	}
+
+/*	New Entry*/
+	
+	.new-entry {
+		width: 80%;
+	}
+
+	.icon {
+		width: 90px;
+	}
+
+	.new-entry img {
+		width: 75px;
+	}
+
+/*Log page*/
+
+	.entry-data {
+		flex-direction: row;
+		padding: 20px;
+	}
+
+	.icon-log {
+		margin-right: 20px;
+	}
+
+	.entry-data-activity {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.journal {
+		min-width: 70%;
+		padding: 0 0 0 25px;
+		text-align: left;
+	}
+
+
+	.activity-text {
+		margin: 0 0 5px 0;
+	}
+
+	.activity-text:last-child {
+		margin-bottom: 0;
+	}
+
+	#about, #track, #analyze {
+		width: 100%;
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.info-text {
+		width: 65%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		line-height: 1.2;
+	}
+
+	.info-text p {
+		margin: 0;
+	}
+
+	.info-text h3 {
+		margin: 0 0 15px 0;
+	}
+
+	.panel-img {
+		display: block;
+		width: 200px;
+		border-radius: 5px;
+	}
+
+	#track .info-text {
+		align-items: flex-end;
+	}
+
+	.moodcloud {
+		padding: 50px 75px;
+	}
+
+	.error-msg {
+		top: 6vh;
+	}
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.container {
+		width: 100%;
+		overflow: visible;
+		margin: 0 auto;
+	}
+
+	.brand {
+		font-size: 3em;
+	}
+
+	.hero {
+		padding-top: 70px;
+	}
+
+	.banner {
+		padding: 100px 80px 40px;
+	}
+
+	.navbar-items {
+		max-width: 1080px;
+		margin: 0 auto;
+	}
+
+	.login-modal {
+		max-width: 350px;
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+
+	#reg {
+		width: 100%;
+		margin: 0;
+	}
+
+	#about, #track, #analyze {
+		height: 225px;
+	}
+
+	.info-panel {
+		padding-left: 75px;
+		padding-right: 75px;
+	}
+
+	.info-text p {
+		font-size: 1.1em;
+	}
+
+	/*Dashboard*/
+	.dashboard-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 90%;
+	}
+
+	.dashboard-item-container {
+		width: 49%;
+		margin: 0 1% 20px 0;
+		position: relative;
+	}
+
+	.dashboard-item-container:nth-child(2) {
+		margin-right: 0;
+	}
+
+	.dashboard-item-container:last-child {
+		margin-right: 0;
+		margin-bottom: 0;
+		flex-basis: 100%;
+		min-height: 100px;
+	}
+
+	.date-bar, .entry-card-bar {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.entry-card {
+		width: 80%;
+		margin-bottom: 15px;
+	}
+
+	.entry-data {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.pie .name, .bar .name {
+		font-size: 1.1em;
+		line-height: 1;
+	}
+	
+	.new-entry-container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.new-entry {
+		width: 100%;
+		text-align: center;
+	}
+
+	fieldset {
+		width: 49%;
+		display: inline-block;
+		margin: 0 0 2% 0;
+	}
+
+	fieldset:first-child {
+		margin-right: 2%;
+	}
+
+	.icon {
+		width: 86px;
+	}
+
+	.new-entry img {
+		width: 75px;
+	}
+
+	.new-journal {
+		width: 100%;
+	}
+
+	.journal {
+		font-size: 1em;
+	}
+
+	.icon-log {
+		margin-right: 40px;
+	}
+
+	.moodcloud {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 100px;
+		font-size: 1.5em;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		max-width: 1100px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+}
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= 'Moodful'
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css')
+    link(href="https://fonts.googleapis.com/css?family=Handlee|Lato:300,700" rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    if (error && error.length > 0)
+      br
+      h4.error-msg= error
+      br
+
+    block content
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  block dashScripts
+  script(src='/frontend.js')

@@ -1,0 +1,54 @@
+extends layout
+ 
+block content
+ include nav
+ .container
+  .banner
+   h1 #{user.team}'s Mood Dashboard
+
+  .dashboard-container
+   .dashboard-item-container
+    .dashboard-item-bar 
+     span Moodcloud
+    .moodcloud
+     if (entries == 0)
+      p You haven't logged any moods yet
+     else 
+       each d in data
+        p.cloud
+          span(style="font-size:#{d.value}em;") #{d.name}
+   .dashboard-item-container
+    .dashboard-item-bar
+     span Last 10 Moods
+    .piechart
+      if (entries == 0)
+       p You haven't logged any moods yet
+      .center
+       #container
+        input#changeBtn(type='checkbox', onclick='changeBtn(this)', checked='')
+        label.switch(for='changeBtn')
+          span Switch Chart
+   .dashboard-item-container
+    .dashboard-item-bar.date-bar
+      if (entries == 0)
+       span 
+      else
+        span.last-entry-date(href= '/log/' + entries[0].date) #{entries[0].user} &nbsp; #{moment(entries[0].date).format('DD/MM/YYYY HH:mm')}
+      span Last Entry
+    .entry-data
+     if (entries == 0)
+      p You haven't logged any moods yet
+     else
+      span.lastmood
+       .icon-log
+        img(src='/img/moods/#{entries[0].mood}.svg', alt="#{entries[0].mood} face")
+        span #{entries[0].mood}
+      .lastact-container
+        span.lastact #{entries[0].activity[0]}
+      span.lastjourn #{entries[0].journal}
+
+block dashScripts
+  script(type='text/javascript').
+    var local_data =!{JSON.stringify(data)}
+  script(src='../d3.v3.min.js')
+  script(src='/sproutChart.js')
